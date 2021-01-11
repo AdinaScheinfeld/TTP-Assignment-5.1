@@ -8,6 +8,16 @@
     </head>
 
     <body>
+        <div>
+            <h1>Drawing Board</h1>
+            <ul>
+                <li>Use the buttons below to add and remove cells from the grid</li>
+                <li>You can also change the colors of the cells using the dropdown menu</li>
+                <li>Clicking on a cell will change that cell's color</li>
+                <li>Clicking dragging allows you to draw on the grid</li>
+            </ul>
+        </div>
+
         <div class="buttons">
             <button class="button" onclick="addRow()">Add row</button>
             <button class="button" onclick="addColumn()">Add column</button>
@@ -28,7 +38,7 @@
             </select>
             <br>
         </form>
-        <p id="cc">Your chosen color: none</p>
+        <p id="cc">Your selected color: none</p>
 
         <table id="grid"></table>
 

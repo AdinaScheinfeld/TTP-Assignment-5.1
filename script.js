@@ -3,6 +3,7 @@ let numCols=0;
 let colorStatus='white';
 let drawing=false;
 
+// Creates a cell with the ability to change color when clicked and on mouseover
 const createCell = (elementClass) => {
     let cell=document.createElement('td');
     cell.classList.add(elementClass);
@@ -13,9 +14,6 @@ const createCell = (elementClass) => {
         if(colorStatus != 'white'){
             this.style.backgroundColor=colorStatus;
             this.classList.remove('white');
-        }
-        else{
-            console.log('hello');
         }
     });
 
@@ -32,7 +30,7 @@ const createCell = (elementClass) => {
     return cell;
 }
 
-// Add row
+// Add rows
 const addRow = () => {
     let grid=document.getElementById('grid');
     let newRow=document.createElement('tr');
@@ -45,10 +43,9 @@ const addRow = () => {
         newRow.appendChild(createCell('tableCell'));
     }        
     numRows++;
-    console.log(numRows);
 }
 
-// Add column
+// Add columns
 const addColumn = () => {
     let grid=document.getElementById('grid');
     let rows=grid.getElementsByClassName('tableRow');
@@ -62,14 +59,14 @@ const addColumn = () => {
     numCols++;
 }
 
-// Remove row
+// Remove rows
 const removeRow = () => {
     let grid=document.getElementById('grid');
     grid.deleteRow(grid.numRows-1);
     numRows--;
 }
 
-// Remove column
+// Remove columns
 const removeColumn = () => {
     let grid=document.getElementById('grid');
     let rows=grid.getElementsByClassName('tableRow');
@@ -83,7 +80,6 @@ const removeColumn = () => {
 const changeColor = (c) => {
     document.getElementById('cc').innerText="Your chosen color: "+c;
     colorStatus=c;
-    console.log(colorStatus);
 }
 
 // Fill all uncolored cells with current color
