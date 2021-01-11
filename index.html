@@ -15,6 +15,18 @@
             <button class="button" onclick="removeColumn()">Remove column</button>
         </div>
 
+        <form>
+            <label for="colors">Choose a color:</label>
+            <select name="colors" id="colors" onchange="changeColor(this.options[this.selectedIndex].value);">
+                <option value="none" id="none">none</option>
+                <option value="red" id="red">red</option>
+                <option value="yellow" id="yellow">yellow</option>
+                <option value="blue" id="blue">blue</option>
+            </select>
+            <br>
+        </form>
+        <p id="cc">Your chosen color: none</p>
+
         <table id="grid"></table>
 
         <script src="script.js"></script>
