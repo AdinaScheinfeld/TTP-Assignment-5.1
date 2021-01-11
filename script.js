@@ -6,6 +6,12 @@ const createCell = (elementClass) => {
     let cell=document.createElement('td');
     cell.classList.add(elementClass);
     cell.classList.add('white');
+
+    // Allow cell to change color when clicked
+    cell.addEventListener('click', function () {
+        this.style.backgroundColor=colorStatus;
+        this.classList.remove('white');
+    });
     return cell;
 }
 
