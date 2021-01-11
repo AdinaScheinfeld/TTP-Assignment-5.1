@@ -78,7 +78,7 @@ const removeColumn = () => {
 
 // Process color selection from color selection dropdown menu
 const changeColor = (c) => {
-    document.getElementById('cc').innerText="Your chosen color: "+c;
+    document.getElementById('cc').innerText="Your selected color: "+c;
     colorStatus=c;
 }
 
