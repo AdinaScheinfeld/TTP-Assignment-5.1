@@ -30,6 +30,7 @@ const addColumn = () => {
     let rows=grid.getElementsByClassName('tableRow');
     if(numRows===0){
         addRow();
+        removeColumn();
     }
     for(let i=0; i<numRows; i++){
         rows[i].appendChild(createCell('tableCell'));
@@ -41,5 +42,15 @@ const addColumn = () => {
 const removeRow = () => {
     let grid=document.getElementById('grid');
     grid.deleteRow(grid.numRows-1);
+    numRows--;
 }
 
+// Remove column
+const removeColumn = () => {
+    let grid=document.getElementById('grid');
+    let rows=grid.getElementsByClassName('tableRow');
+    for(let i=0; i<numRows; i++){
+        grid.rows[i].deleteCell(numCols-1);
+    } 
+    numCols--;
+}
