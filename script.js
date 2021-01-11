@@ -81,5 +81,14 @@ const fillAllUncolored = () => {
     white.forEach(cell => {
         cell.style.backgroundColor=colorStatus;
         cell.classList.remove('white');
-    })
+    });
+}
+
+// Fill all cells with the selected color
+const fillAllCells = () => {
+    let cells=document.getElementsByClassName('tableCell');
+    [...cells].forEach(cell => {
+        cell.style.backgroundColor=colorStatus;
+        cell.classList.remove('white');
+    });
 }
