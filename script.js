@@ -1,6 +1,7 @@
 let numRows=0;
 let numCols=0;
 let colorStatus='white';
+let drawing=false;
 
 const createCell = (elementClass) => {
     let cell=document.createElement('td');
@@ -17,6 +18,17 @@ const createCell = (elementClass) => {
             console.log('hello');
         }
     });
+
+    //Allow cells to change color on mouseover
+    cell.addEventListener('mousedown', e => drawing=true);
+    cell.addEventListener('mouseup', e => drawing=false);
+    cell.addEventListener('mousemove', e => {
+        if(drawing){
+            cell.style.backgroundColor=colorStatus;
+            cell.classList.remove('white');
+        }
+    });
+
     return cell;
 }
 
@@ -101,3 +113,4 @@ const clearAllCells = () => {
         cell.classList.add('white');
     });
 }
+
