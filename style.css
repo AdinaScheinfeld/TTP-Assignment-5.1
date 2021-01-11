@@ -1,0 +1,19 @@
+body {
+    background-color: azure;
+}
+
+table {
+    background-color: white;
+    border: 1px solid black;
+    empty-cells: show;
+}
+
+th {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+}
