@@ -9,8 +9,13 @@ const createCell = (elementClass) => {
 
     // Allow cell to change color when clicked
     cell.addEventListener('click', function () {
-        this.style.backgroundColor=colorStatus;
-        this.classList.remove('white');
+        if(colorStatus != 'white'){
+            this.style.backgroundColor=colorStatus;
+            this.classList.remove('white');
+        }
+        else{
+            console.log('hello');
+        }
     });
     return cell;
 }
@@ -62,8 +67,19 @@ const removeColumn = () => {
     numCols--;
 }
 
+// Process color selection from color selection dropdown menu
 const changeColor = (c) => {
     document.getElementById('cc').innerText="Your chosen color: "+c;
     colorStatus=c;
     console.log(colorStatus);
+}
+
+// Fill all uncolored cells with current color
+const fillAllUncolored = () => {
+    let cells=document.getElementsByClassName('tableCell');
+    let white=[...cells].filter(cell=>cell.classList.contains('white'));
+    white.forEach(cell => {
+        cell.style.backgroundColor=colorStatus;
+        cell.classList.remove('white');
+    })
 }
