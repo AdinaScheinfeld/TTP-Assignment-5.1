@@ -27,7 +27,7 @@ const addRow = () => {
 // Add column
 const addColumn = () => {
     let grid=document.getElementById('grid');
-    let rows=document.getElementsByClassName('tableRow');
+    let rows=grid.getElementsByClassName('tableRow');
     if(numRows===0){
         addRow();
     }
@@ -35,5 +35,11 @@ const addColumn = () => {
         rows[i].appendChild(createCell('tableCell'));
     }
     numCols++;
+}
+
+// Remove row
+const removeRow = () => {
+    let grid=document.getElementById('grid');
+    grid.deleteRow(grid.numRows-1);
 }
 
