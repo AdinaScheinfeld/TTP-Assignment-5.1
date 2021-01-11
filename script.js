@@ -1,5 +1,6 @@
 let numRows=0;
 let numCols=0;
+let colorStatus='white';
 
 const createCell = (elementClass) => {
     let cell=document.createElement('td');
@@ -53,4 +54,10 @@ const removeColumn = () => {
         grid.rows[i].deleteCell(numCols-1);
     } 
     numCols--;
+}
+
+const changeColor = (c) => {
+    document.getElementById('cc').innerText="Your chosen color: "+c;
+    colorStatus=c;
+    console.log(colorStatus);
 }
