@@ -92,3 +92,12 @@ const fillAllCells = () => {
         cell.classList.remove('white');
     });
 }
+
+// Revert all cells to their original color
+const clearAllCells = () => {
+    let cells=document.getElementsByClassName('tableCell');
+    [...cells].forEach(cell => {
+        cell.style.backgroundColor='white';
+        cell.classList.add('white');
+    });
+}
